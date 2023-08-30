@@ -1,0 +1,221 @@
+{
+  "products": [
+    {
+      "id": "h1",
+      "nombre": "Clásica",
+      "categoria": "carne",
+      "ingredientes": [
+        "200g Carne vacuna",
+        "Cebolla",
+        "Lechuga",
+        "Tomate",
+        "Mayonesa"
+      ],
+      "descripcion": "La hamburguesa clásica, con todos los ingredientes que te encantan",
+      "precio": 2000,
+      "img": "https://res.cloudinary.com/dna9rrdkj/image/upload/v1677524989/Rock%20n%27%20burger/products/carne/Classic-Chicken-burger_wl4pwv.jpg"
+    },
+
+    {
+      "id": "h2",
+      "nombre": "Doble Cheese",
+      "categoria": "carne",
+      "ingredientes": [
+        "2x 200g Carne vacuna",
+        "Doble Queso cheddar",
+        "Tocino",
+        "Lechuga",
+        "Tomate",
+        "Cebolla",
+        "Mayonesa"
+      ],
+      "descripcion": "Para los que aman el queso, la hamburguesa doble queso es la opción perfecta",
+      "precio": 2800,
+      "img": "https://res.cloudinary.com/dna9rrdkj/image/upload/v1677525179/Rock%20n%27%20burger/products/carne/Double-Cheese-Burgers-450x450-1-450x450_ygcl5t.png"
+    },
+    {
+      "id": "h3",
+      "nombre": "La crocante",
+      "categoria": "carne",
+      "ingredientes": [
+        "Pechuga de pollo frita",
+        "Queso cheddar",
+        "Lechuga",
+        "Tomate",
+        "Cebolla",
+        "Mayonesa"
+      ],
+      "descripcion": "Si eres fanático del pollo, no te puedes perder nuestra hamburguesa de pollo crispy",
+      "precio": 2200,
+      "img": "https://res.cloudinary.com/dna9rrdkj/image/upload/v1677525251/Rock%20n%27%20burger/products/carne/receta-hamburguesa-de-pollo-crujiente_cihqto.jpg"
+    },
+    {
+      "id": "h4",
+      "nombre": "Bacon burger",
+      "categoria": "carne",
+      "ingredientes": [
+        "Carne de vacuno",
+        "Queso cheddar",
+        "Tocino",
+        "Lechuga",
+        "Tomate",
+        "Cebolla",
+        "Mayonesa"
+      ],
+      "descripcion": "La hamburguesa para los amantes del tocino y la carne de vacuno",
+      "precio": 2700,
+      "img": "https://res.cloudinary.com/dna9rrdkj/image/upload/v1677525385/Rock%20n%27%20burger/products/carne/bbq-bacon-burger-recipe_olng87.jpg"
+    },
+    {
+      "id": "h5",
+      "nombre": "Caramelo",
+      "categoria": "carne",
+      "ingredientes": [
+        "Carne de vacuno",
+        "Queso gouda",
+        "Cebolla caramelizada",
+        "Lechuga",
+        "Tomate",
+        "Mayonesa"
+      ],
+      "descripcion": "Para los amantes de la cebolla caramelizada, nuestra hamburguesa es la mejor opción",
+      "precio": 2400,
+      "img": "https://res.cloudinary.com/dna9rrdkj/image/upload/v1677525469/Rock%20n%27%20burger/products/carne/Bacon-Burger-1_uol08x.jpg"
+    },
+    {
+      "id": "h6",
+      "nombre": "Mushroom burger",
+      "categoria": "carne",
+      "ingredientes": [
+        "Carne de vacuno",
+        "Queso cheddar",
+        "Hongo portobello",
+        "Lechuga",
+        "Tomate",
+        "Cebolla",
+        "Mayonesa"
+      ],
+      "descripcion": "Si te encantan los champiñones, no te puedes perder nuestra deliciosa mushroom burger",
+      "precio": 2600,
+      "img": "https://res.cloudinary.com/dna9rrdkj/image/upload/v1677525567/Rock%20n%27%20burger/products/carne/mush_bb7tbe.png"
+    },
+    {
+      "id": "f2",
+      "nombre": "Cheese's",
+      "categoria": "fritas",
+      "ingredientes": ["Papa", "Aceite vegetal", "Sal", "Queso cheddar"],
+      "descripcion": "Papas fritas cubiertas con queso derretido y salpicadas con sal.",
+      "precio": 1800,
+      "img": "https://res.cloudinary.com/dna9rrdkj/image/upload/v1677525879/Rock%20n%27%20burger/products/fritas/1137453-1598976356395_fph0my.jpg"
+    },
+    {
+      "id": "f3",
+      "nombre": "La inexplicable",
+      "categoria": "fritas",
+      "ingredientes": [
+        "Papa",
+        "Aceite vegetal",
+        "Sal",
+        "Ajo",
+        "Queso parmesano"
+      ],
+      "descripcion": "Papas fritas con un toque de ajo y queso parmesano rallado.",
+      "precio": 2000,
+      "img": "https://res.cloudinary.com/dna9rrdkj/image/upload/v1677525959/Rock%20n%27%20burger/products/fritas/5a31fdbc-b617-4521-aa92-7fa6d117deff_p9ql6e.jpg"
+    },
+    {
+      "id": "f4",
+      "nombre": "Panceteras",
+      "categoria": "fritas",
+      "ingredientes": [
+        "Papa",
+        "Aceite vegetal",
+        "Sal",
+        "Bacon",
+        "Queso cheddar"
+      ],
+      "descripcion": "Papas fritas cubiertas con bacon crujiente y queso derretido.",
+      "precio": 2500,
+      "img": "https://res.cloudinary.com/dna9rrdkj/image/upload/v1677526021/Rock%20n%27%20burger/products/fritas/CheddarBacon-2_xscoyh.jpg"
+    },
+    {
+      "id": "f5",
+      "nombre": "Las re picantes",
+      "categoria": "fritas",
+      "ingredientes": [
+        "Papa",
+        "Aceite vegetal",
+        "Sal",
+        "Carne de res",
+        "Frijoles",
+        "Chili en polvo",
+        "Queso cheddar"
+      ],
+      "descripcion": "Papas fritas cubiertas con una mezcla de chili de carne y frijoles, y queso derretido.",
+      "precio": 2800,
+      "img": "https://res.cloudinary.com/dna9rrdkj/image/upload/v1677526095/Rock%20n%27%20burger/products/fritas/The-Best-Vegan-Chili-Cheese-Fries-15-1-scaled_aofkwu.jpg"
+    },
+    {
+      "id": "v1",
+      "nombre": "Beyond Burger",
+      "categoria": "veggie",
+      "ingredientes": [
+        "carne vegana Beyond Meat",
+        "cebolla caramelizada",
+        "lechuga",
+        "tomate",
+        "pan vegano",
+        "salsa especial"
+      ],
+      "descripcion": "Deliciosa hamburguesa vegana con carne de Beyond Meat y cebolla caramelizada, servida en pan vegano con lechuga, tomate y salsa especial",
+      "precio": 2500,
+      "img": "https://res.cloudinary.com/dna9rrdkj/image/upload/v1677526151/Rock%20n%27%20burger/products/veggie/beyondburger-e1552079697496_ch3sbp.jpg"
+    },
+    {
+      "id": "v2",
+      "nombre": "Impossible Burger",
+      "categoria": "veggie",
+      "ingredientes": [
+        "carne vegana Impossible Foods",
+        "cebolla frita",
+        "aguacate",
+        "pan integral",
+        "salsa BBQ"
+      ],
+      "descripcion": "Hamburguesa vegana con carne de Impossible Foods, cebolla frita, aguacate y salsa BBQ, servida en pan integral",
+      "precio": 2800,
+      "img": "https://res.cloudinary.com/dna9rrdkj/image/upload/v1677526225/Rock%20n%27%20burger/products/veggie/2048_udlzk1.jpg"
+    },
+    {
+      "id": "v3",
+      "nombre": "Portobello Burger",
+      "categoria": "veggie",
+      "ingredientes": [
+        "portobello a la parrilla",
+        "lechuga",
+        "cebolla morada",
+        "tomate",
+        "pan brioche",
+        "salsa de mostaza y miel"
+      ],
+      "descripcion": "Hamburguesa vegana con portobello a la parrilla, lechuga, cebolla morada, tomate y salsa de mostaza y miel, servida en pan brioche",
+      "precio": 2000,
+      "img": "https://res.cloudinary.com/dna9rrdkj/image/upload/v1677526271/Rock%20n%27%20burger/products/veggie/portobello_cchpvr.jpg"
+    },
+    {
+      "id": "v4",
+      "nombre": "Saifan Burger",
+      "categoria": "veggie",
+      "ingredientes": [
+        "saifan",
+        "aguacate",
+        "pepino",
+        "pan de pita",
+        "salsa tzatziki"
+      ],
+      "descripcion": "Hamburguesa vegana con quinoa, aguacate, pepino y salsa tzatziki, servida en pan de pita",
+      "precio": 1800,
+      "img": "https://res.cloudinary.com/dna9rrdkj/image/upload/v1677526370/Rock%20n%27%20burger/products/veggie/105567652_3082891391756502_5520072566250818898_n_lkrngi.jpg"
+    }
+  ]
+}
