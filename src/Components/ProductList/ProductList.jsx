@@ -1,7 +1,7 @@
 import React from 'react'
 import { useEffect, useState } from "react";
 import { db } from "../../firebaseConfig";
-import {collection, getDocs, query, where} from "firebase/firestore"
+import {collection, getDocs } from "firebase/firestore"
 import LoadingPage from "../LoadingPage/LoadingPage";
 import ProductListComponent from './ProductListComponent';
 
