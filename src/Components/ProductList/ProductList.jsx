@@ -13,19 +13,18 @@ const ProductList = () => {
     const productsCollection = collection(db, "products");
     getDocs(productsCollection)
       .then(res => {
-        const receivedProducts = handleProductData(res)
+        const receivedProducts = agregarIdAlProducto(res)
         setProductList(receivedProducts)
-        console.log(receivedProducts);
         setAreItemsCharged(true)
       })
       .catch(err => console.log(err))
   }, [])
 
-  const handleProductData = (dataReceived) => {
+  const agregarIdAlProducto = (dataReceived) => {
     return dataReceived.docs.map((hostProduct) => {
       return {
         ...hostProduct.data(),
-        hostId: hostProduct.id
+        id: hostProduct.id
       }
     })
   }
@@ -34,7 +33,7 @@ const ProductList = () => {
     <>
     {
       (areItemsCharged) 
-      ? <div className="products"  style={{backgroundColor: "#fbbe00", paddingBottom: 50}}>
+      ? <div className="products">
          <ProductListComponent productList={productList} />
         </div>
       : <LoadingPage />
