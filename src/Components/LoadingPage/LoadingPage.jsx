@@ -1,6 +1,4 @@
 import { ClipLoader } from "react-spinners";
-import styles from "./LoadingPage.module.css";
-import { Col, Row } from "react-bootstrap";
 
 const LoadingPage = () => {
   return (
