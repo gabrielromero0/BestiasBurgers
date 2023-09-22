@@ -14,19 +14,17 @@ const NavbarDropdown = ({ categories, areCategoriesCharged }) => {
       >
         Menu
       </Dropdown.Toggle>
-      <Dropdown.Menu variant="dark">
-        <Dropdown.Item as={Link} to="categories">
-          Menu completo
-        </Dropdown.Item>
+      <Dropdown.Menu>
         <Dropdown.Divider />
         {areCategoriesCharged ? (
-          categories.map((categoria) => (
+          categories.map((category) => (
             <Dropdown.Item
               as={Link}
-              key={categoria.id}
+              key={category.id}
               style={{ textTransform: "capitalize" }}
+              to={`category/${category.type}`}
             >
-              {categoria.type}
+              {category.type}
             </Dropdown.Item>
           ))
         ) : (

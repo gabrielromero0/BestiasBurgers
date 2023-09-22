@@ -14,7 +14,8 @@ function App() {
         <CustomNavbar />
         <Routes>
           <Route path="/" element={<ProductList />} />
-          <Route path="/producto/:idProducto" element={<ProductDetail />} />
+          <Route path="/product/:product_id" element={<ProductDetail />} />
+          <Route path="/category/:category" element={<ProductList />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
       </BrowserRouter>

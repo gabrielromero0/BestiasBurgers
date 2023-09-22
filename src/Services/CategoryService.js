@@ -24,7 +24,6 @@ export const getCategoryList = async () => {
     console.log(error);
   }
   finally{
-    console.log(categoryList)
     return categoryList;
   }
 }

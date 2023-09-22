@@ -1,23 +1,31 @@
 import { db } from "../firebaseConfig";
-import {collection, doc, getDoc, getDocs } from "firebase/firestore"
+import {collection, doc, getDoc, getDocs, query, where } from "firebase/firestore"
 
-export const getProductList = async () => {
+const filterQuery = (category) => {
+  const productsCollection = collection(db, "products");
+  if (category) {
+    return query(productsCollection, where("category", "==", category));
+  } else {
+    return query(productsCollection);
+  }
+}
+
+export const getProductList = async (category = null) => {
   let productList = [];
   try{
-    const productsCollection = collection(db, "products");
+    const productsCollection = filterQuery(category);
     const productsSnapshot = await getDocs(productsCollection);
     productList = productsSnapshot.docs.map((doc) => ({
       id: doc.id,
       ...doc.data(),
-    }));  
+    }));
+    return productList;
   }
   catch(error){
     console.log(error);
   }
-  finally{
-    return productList;
-  }
 }
+
 export const getProductDetail = async (id) => {
   try {
     const itemCollection = collection(db, "products");
@@ -36,6 +44,8 @@ export const getProductDetail = async (id) => {
     throw error;
   }
 }
+
+
 
 
 

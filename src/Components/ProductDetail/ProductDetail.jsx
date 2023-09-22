@@ -9,7 +9,7 @@ import { CartContext } from '../../context/CartContext'
 const ProductDetail = () => {
 
   const {addToCart, getProductQuantity} = useContext(CartContext)
-  const { idProducto } = useParams();
+  const { product_id } = useParams();
   const [productDetail, setProductDetail] = useState();
   const [isProductReceived, setIsProductReceived] = useState(false)
   const initial = productDetail && getProductQuantity(productDetail.id)
@@ -17,12 +17,12 @@ const ProductDetail = () => {
 
 
   useEffect(() => {
-    getProductDetail( idProducto)
+    getProductDetail( product_id)
       .then(productDetailReceived => {
         setProductDetail(productDetailReceived);
         setIsProductReceived(true);
       })
-  },[idProducto]);
+  },[product_id]);
 
   const onAdd = (quantity) => {
     const productWithQuantity = {

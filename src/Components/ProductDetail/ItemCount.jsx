@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import styles from './ItemCount.module.css'
 import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai';
-import CustomButton from '../CustomButton/CustomButton';
+import { Button } from 'react-bootstrap';
 
 const ItemCount = ({stock, initial, onAdd}) => {
 
@@ -27,7 +27,9 @@ const ItemCount = ({stock, initial, onAdd}) => {
         <AiOutlinePlus />
       </span>
       <div onClick={() => {onAdd(quantity)}}>
-        <CustomButton text="Agregar al carrito" />
+        <Button> 
+          Agregar al carrito
+        </Button>
       </div>
     </div>
   );
