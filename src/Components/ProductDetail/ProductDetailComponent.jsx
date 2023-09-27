@@ -12,9 +12,9 @@ const ProductDetailComponent = ({productDetail = null, onAdd, initial, stock}) =
               <Image src="https://res.cloudinary.com/dna9rrdkj/image/upload/v1677524989/Rock%20n%27%20burger/products/carne/Classic-Chicken-burger_wl4pwv.jpg" fluid className={styles.imagen}/>
             </Col>
             <Col lg={6}>
-              <h1 className={styles.nombre}>{productDetail.nombre}</h1>
-              <p className={styles.descripcion}>{productDetail.descripcion}</p>
-              <p className={styles.precio}>Precio: ${productDetail.precio}</p>
+              <h1 className={styles.nombre}>{productDetail.name}</h1>
+              <p className={styles.descripcion}>{productDetail.description}</p>
+              <p className={styles.precio}>Precio: ${productDetail.price}</p>
               <ItemCount stock={stock} initial={initial} onAdd={onAdd} />
             </Col>
             </>

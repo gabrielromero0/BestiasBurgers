@@ -6,6 +6,8 @@ import PageNotFound from './Components/PageNotFound/PageNotFound';
 import ProductDetail from './Components/ProductDetail/ProductDetail';
 import CustomNavbar from './Components/NavbarContainer/NavbarContainer';
 import CartContextProvider from './context/CartContext';
+import Footer from './Components/Footer/Footer';
+import ContactoContainer from './Components/ContactoContainer/ContactoContainer';
 
 function App() {
   return (
@@ -17,7 +19,9 @@ function App() {
           <Route path="/product/:product_id" element={<ProductDetail />} />
           <Route path="/category/:category" element={<ProductList />} />
           <Route path="*" element={<PageNotFound />} />
+          <Route path="/contacto" element={ <ContactoContainer /> }/>
         </Routes>
+        <Footer />
       </BrowserRouter>
       </CartContextProvider>
   );
