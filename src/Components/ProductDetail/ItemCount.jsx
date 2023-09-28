@@ -19,15 +19,15 @@ const ItemCount = ({stock, initial, onAdd}) => {
 
   return (
     <div className={styles.number}>
-      <span className={styles.minus} onClick={handleMinus}>
+      <Button variant="outline-primary" onClick={handleMinus}>
         <AiOutlineMinus />
-      </span>
+      </Button>
       <span className={styles.num}>{quantity}</span>
-      <span className={styles.plus} onClick={handlePlus}>
+      <Button variant="outline-primary" onClick={handlePlus}>
         <AiOutlinePlus />
-      </span>
+      </Button>
       <div onClick={() => {onAdd(quantity)}}>
-        <Button> 
+        <Button variant="outline-primary"> 
           Agregar al carrito
         </Button>
       </div>

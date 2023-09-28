@@ -18,7 +18,8 @@ const CartContextProvider = ( {children} ) => { //este es el componente que prov
   }
 
   const isInCart = (id) => { //recibe un id y devuelve true si el producto está en el carrito
-    return cartList.some((product) => product.id === id)
+    const product = cartList.find((producto) => producto.id === id);
+    return product !== undefined
   }
 
   const decreaseProductQuantity = (id) => { //recibe un id y disminuye la cantidad del producto en 1
@@ -79,6 +80,9 @@ const CartContextProvider = ( {children} ) => { //este es el componente que prov
     return product.price * product.quantity
   }
 
+  const isCartWithProducts = () => { //devuelve true si el carrito tiene productos
+    return cartList.length > 0
+  }
 
   const cartContextList = {
     cartList,
@@ -91,7 +95,8 @@ const CartContextProvider = ( {children} ) => { //este es el componente que prov
     cleanCart,
     getCartTotalQuantity,
     getProductQuantity,
-    getProductTotalPrice
+    getProductTotalPrice,
+    isCartWithProducts
   }
 
   //value va a manejar todo lo que quiero proveer al contexto
