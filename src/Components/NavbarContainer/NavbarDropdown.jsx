@@ -1,37 +1,29 @@
-import React from "react";
-import { Dropdown } from "react-bootstrap";
-import { Link } from "react-router-dom";
-import "./NavbarComponent.css";
-
+import React from 'react';
+import { Link } from 'react-router-dom';
+import NavDropdown from 'react-bootstrap/NavDropdown';
+import styles from './NavbarComponent.module.css';
 const NavbarDropdown = ({ categories, areCategoriesCharged }) => {
-
   return (
-    <Dropdown>
-      <Dropdown.Toggle
-        variant="dark"
-        id="dropdown-basic"
-        className="custom-dropdown-toggle "
-      >
-        Menu
-      </Dropdown.Toggle>
-      <Dropdown.Menu>
-        <Dropdown.Divider />
-        {areCategoriesCharged ? (
-          categories.map((category) => (
-            <Dropdown.Item
-              as={Link}
-              key={category.id}
-              style={{ textTransform: "capitalize" }}
-              to={`category/${category.type}`}
-            >
-              {category.type}
-            </Dropdown.Item>
-          ))
-        ) : (
-          <Dropdown.Item disabled>Loading...</Dropdown.Item>
-        )}
-      </Dropdown.Menu>
-    </Dropdown>
+    <NavDropdown
+      id='nav-dropdown'
+      title='Menú'
+    >
+      {areCategoriesCharged ? (
+        categories.map((category) => (
+          <NavDropdown.Item
+            as={Link}
+            key={category.id}
+            style={{ textTransform: 'capitalize' }}
+            to={`category/${category.type}`}
+            className={styles.dropdownItem}
+          >
+            {category.type}
+          </NavDropdown.Item>
+        ))
+      ) : (
+        <NavDropdown.Item disabled>Loading...</NavDropdown.Item>
+      )}
+    </NavDropdown>
   );
 };
 
