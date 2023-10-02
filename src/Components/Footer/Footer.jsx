@@ -7,7 +7,10 @@ import { AiOutlineTwitter } from 'react-icons/ai';
 
 function Footer() {
   return (
-    <footer className="bg-dark text-white py-5">
+    <footer className="bg-dark text-white py-5" style={{
+      bgColor: "black",
+      width: "100%"
+    }}>
       <Container style={{padding: "60px 0px"}}>
         <Row className="justify-content-center mb-4" style={{marginRight: 0}}>
           <Col className="text-center">

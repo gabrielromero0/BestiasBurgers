@@ -1,12 +1,14 @@
 import React from 'react';
-import { Button, Container, Nav, NavDropdown, Navbar } from 'react-bootstrap';
+import { Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import CartWidget from './CartWidget';
 import NavbarDropdown from './NavbarDropdown';
 import styles from "./NavbarComponent.module.css"
 const NavbarComponent = (navbarProps) => {
   return (
-    <Navbar className='bg-secondary-subtle' variant="pills" expand="md" >
+    <Navbar className='bg-secondary-subtle' variant="pills" expand="md" style={{
+      height: "80px"
+    }}>
       <Container>
         <Link to='/' className={`${styles.links}`}>
           <Navbar.Brand>BestiasBurgers</Navbar.Brand>

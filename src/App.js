@@ -14,7 +14,7 @@ function App() {
   return (
     <CartContextProvider> {/* GESTIÓN DEL CARRITO*/}
       <BrowserRouter>
-        <CustomNavbar />
+      <CustomNavbar />
         <Routes>
           <Route path="/" element={<ProductList />} />
           <Route path="/product/:product_id" element={<ProductDetail />} />
