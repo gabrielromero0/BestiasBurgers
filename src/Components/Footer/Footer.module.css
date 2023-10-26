@@ -1,5 +1,5 @@
 .footer {
-  background-color: #000;
+  background-color: rgb(79, 81, 80);
   color: #fff;
   padding: 40px 0px;
 }
@@ -8,31 +8,32 @@
   display: inline-block;
   width: 120px;
   height: 120px;
-  background-image: url("ruta/a/icono/hamburguesa.png");
+ 
 }
 
 .footer p {
   margin-top: 3rem;
   margin-bottom: 0;
+  color: #fff;
 }
 
 .footer .icon-pedidosya {
   display: inline-block;
   width: 40px;
   height: 40px;
-  background-image: url("ruta/a/icono/pedidosya.png");
+  
 }
 
 .footer .icon-instagram {
   display: inline-block;
   width: 40px;
   height: 40px;
-  background-image: url("ruta/a/icono/instagram.png");
+  
 }
 
 .footer .icon-facebook {
   display: inline-block;
   width: 40px;
   height: 40px;
-  background-image: url("ruta/a/icono/facebook.png");
+
 }

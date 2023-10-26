@@ -9,11 +9,11 @@ Además, facilita la construccion de componentes reutilizables.
 
 /* COLORES DE LA PALETA DE COLORES */
 :root {
-  --color-1: #24879E;
-  --color-2: #3E608A;
-  --color-3: #BE361B;
-  --color-4: #D85120;
-  --color-navbar: #196F83; 
+  --color-1: #3AA314 ;
+  --color-2: #81c7b1;
+  --color-3: #1bb9be;
+  --color-4: #196F83; 
+  --color-5: #17330D; 
 }
 
 /* CONFIG DE LA FUENTE */

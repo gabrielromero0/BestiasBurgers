@@ -1,14 +1,13 @@
 import React from 'react'
 import { GiHamburger } from 'react-icons/gi';
 import { FaInstagram, FaFacebook } from 'react-icons/fa';
-
 import { Container, Row, Col } from 'react-bootstrap';
 import { AiOutlineTwitter } from 'react-icons/ai';
+import styles from "./Footer.module.css";
 
 function Footer() {
   return (
-    <footer className="bg-dark text-white py-5" style={{
-      bgColor: "black",
+    <footer className={`${styles.footer}`} style={{     
       width: "100%"
     }}>
       <Container style={{padding: "60px 0px"}}>

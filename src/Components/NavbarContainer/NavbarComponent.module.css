@@ -8,3 +8,11 @@
   color: black;
   margin-left: 10px;
 }
+
+.navbar{
+  background-color: var(--color-1);
+}
+
+.nav{
+  background-color: aqua;
+}

@@ -1,23 +1,26 @@
 import React from 'react';
-import { Container, Nav, Navbar } from 'react-bootstrap';
+import { Container, Nav, Navbar , Image} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import CartWidget from './CartWidget';
 import NavbarDropdown from './NavbarDropdown';
-import styles from "./NavbarComponent.module.css"
+import styles from "./NavbarComponent.module.css";
+import logo from '../../assets/logo.png';
+
 const NavbarComponent = (navbarProps) => {
   return (
-    <Navbar className='bg-secondary-subtle' variant="pills" expand="md" style={{
+    <Navbar className={`${styles.navbar}`}  variant="pills" expand="md" style={{
       height: "80px"
     }}>
-      <Container>
+      <Container >
         <Link to='/' className={`${styles.links}`}>
-          <Navbar.Brand>BestiasBurgers</Navbar.Brand>
+          <Navbar.Brand><Image src={logo} alt="Mi Imagen" fluid/>
+          </Navbar.Brand>
         </Link>
         <Navbar.Toggle aria-controls='basic-navbar-nav' />
         <Navbar.Collapse id='basic-navbar-nav'>
-          <Nav className={`me-auto d-flex align-items-center justify-content-between w-100`}>
+          <Nav className={`me-auto d-flex align-items-center justify-content-between w-100`}  >
             <div className={`d-flex align-items-center ${styles.buttons}`} >
-              <NavbarDropdown {...navbarProps}/>
+              <NavbarDropdown {...navbarProps} />
               <Link to="/contacto"  className={styles.links}>
                   Contactanos
               </Link>
