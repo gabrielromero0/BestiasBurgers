@@ -5,8 +5,9 @@ import LoadingPage from "../LoadingPage/LoadingPage";
 import ProductListComponent from './ProductListComponent';
 import { useParams } from 'react-router-dom';
 
+
 const ProductList = () => {
-  const [productList, setProductList] = useState();
+  const [productList, setProductList] = useState([]);
   const [areItemsCharged, setAreItemsCharged] = useState(false)
   const {category} = useParams();
   useEffect(() => {

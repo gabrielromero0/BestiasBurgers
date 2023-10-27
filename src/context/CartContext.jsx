@@ -1,11 +1,24 @@
 import { createContext, useState } from "react"
+import { getProductList } from "../Services/ProductsService"
 
 export const CartContext = createContext() //idealmente, el mismo nombre que el archivo
 
 const CartContextProvider = ( {children} ) => { //este es el componente que provee el contexto
 
   const [cartList, setCartList] = useState([]); //el estado inicial es un array vacío
+  const [productArray, setProductArray] = useState([]); //el estado inicial es un array vacío
   
+
+  const getProductList = () => {
+    const res = getProductList()
+    setProductArray(res)
+    return res
+  }
+
+
+
+
+
   const addToCart = (productWithQuantity) => { //recibe un producto con cantidad y lo agrega al carrito o actualiza la cantidad si ya está en el carrito
     if (isInCart(productWithQuantity.id)){
       const productIndex =  cartList.findIndex(product => product.id === productWithQuantity.id);
@@ -96,7 +109,8 @@ const CartContextProvider = ( {children} ) => { //este es el componente que prov
     getCartTotalQuantity,
     getProductQuantity,
     getProductTotalPrice,
-    isCartWithProducts
+    isCartWithProducts,
+    getProductList,
   }
 
   //value va a manejar todo lo que quiero proveer al contexto
