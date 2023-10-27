@@ -3,7 +3,7 @@ import CheckoutFormComponent from './CheckoutFormComponent'
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 
-const CheckoutForm = ({checkoutData, setCheckoutData, setValidated}) => {
+const CheckoutForm = ({checkoutData, setCheckoutData, setValidated, handleClose}) => {
   const formik = useFormik({
     initialValues: {
       userName: "",
@@ -46,6 +46,7 @@ const CheckoutForm = ({checkoutData, setCheckoutData, setValidated}) => {
     formik,
     checkoutData,
     setCheckoutData,
+    handleClose
   }
   return (
     <CheckoutFormComponent {...formParams}/>
