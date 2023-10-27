@@ -6,11 +6,11 @@ import * as Yup from 'yup';
 const CheckoutForm = ({checkoutData, setCheckoutData, setValidated}) => {
   const formik = useFormik({
     initialValues: {
-      userName: "Nicolas",
-      userLastName: "Muros",
-      userPhone: "2604338179",
-      userEmail: "nicomuros@gmail.com",
-      userConfirmEmail: "nicomuros@gmail.com",
+      userName: "",
+      userLastName: "",
+      userPhone: "",
+      userEmail: "",
+      userConfirmEmail: "",
     },
     validationSchema: Yup.object({
       userName: Yup.string()
