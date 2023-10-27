@@ -4,13 +4,16 @@ import { Container, Row } from 'react-bootstrap';
 import styles from './Products.module.css';
 import ProductCard from '../../Components/ProductCard/ProductCard';
 import { useProduct } from '../../context/ProductContext';
+import { useParams } from 'react-router-dom';
 
 const Products = () => {
   const {loadingProductList, getProductList, productList} = useProduct();
 
+  const { category } = useParams();
+
   useEffect(() => {
-    getProductList();
-  }, [])
+    category ? getProductList(category) : getProductList();
+  }, [category, getProductList])
 
   return (
     <>

@@ -15,7 +15,7 @@ const ProductDetail = () => {
   
   useEffect(() => {
     getProductDetail(productId)
-  }, [])
+  }, [productId, getProductDetail])
 
   return (
     <>

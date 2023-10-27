@@ -19,10 +19,10 @@ export const ProductProvider = ({ children }) => {
   const [loadingProductDetail, setLoadingProductDetail] = useState(true);
   const [loadingProductList, setLoadingProductList] = useState(true);
 
-  const getProductList = async () => {
+  const getProductList = async (category = null) => {
     setLoadingProductList(true);
     try {
-      const res = await getProductListRequest();
+      const res = await getProductListRequest(category);
       setProductList(res);
       setLoadingProductList(false);
       return res; // Devuelve res después de completar la solicitud
