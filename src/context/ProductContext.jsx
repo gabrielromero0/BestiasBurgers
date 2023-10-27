@@ -12,8 +12,10 @@ export const useProduct = () => {
 }
 
 export const ProductProvider = ({ children }) => {
+  
   const [productList, setProductList] = useState([]);
   const [productDetail, setProductDetail] = useState(null); // Cambiado a null
+
   const [loadingProductDetail, setLoadingProductDetail] = useState(true);
   const [loadingProductList, setLoadingProductList] = useState(true);
 

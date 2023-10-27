@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useCart } from '../../context/CartContext';
 import { Button, Col, Container, Row } from 'react-bootstrap';
 import styles from './Cart.module.css';
@@ -7,7 +7,7 @@ import CheckoutModal from '../../Components/CheckoutModal/CheckoutModal';
 import Swal from 'sweetalert2';
 
 export default function Cart() {
-  const { isCartWithProducts} = useCart();
+  const { isCartWithProducts } = useCart();
 
   return (
     <Container fluid className={styles.container}>
@@ -35,11 +35,12 @@ const CartModule = () => {
   <>
     <Col lg={6}>
       <h2>Carrito</h2>
-      {
-        cartList.map((item) => {
+
+      {cartList.map((item) => {
           return (<CartItem item={item} key={item.id}/>)
         })
-      }
+        }
+
     </Col>
     <Col lg={4} >
       <CartSummary/>

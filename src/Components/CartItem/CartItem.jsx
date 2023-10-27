@@ -52,13 +52,17 @@ const CartItem = ({item}) => {
     </div>
     <div className={`d-flex flex-column ${styles.itemButtons}`}>
       <div className={`d-flex ${styles.plusMinusButtons}`}>
+        
         <Button variant='outline-primary' onClick={() => handleMinus(item.id)}>
           <AiOutlineMinus />
         </Button>
+
         <span className={styles.num}>{item.quantity}</span>
+
         <Button variant='outline-primary' onClick={() => handlePlus(item.id)}>
           <AiOutlinePlus />
         </Button>
+        
       </div>
       <div>
         <Button variant='outline-primary' onClick={() => handleDeleteProduct(item.id)}>Eliminar</Button>

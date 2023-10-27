@@ -5,10 +5,12 @@ import { useFormik } from 'formik';
 import { checkoutValidationSchema } from '../../utils/checkoutValidationSchema';
 
 const CheckoutModal = ({handleModal}) => {
+
   const {cartList, getCartTotalAmount, getProductTotalPrice } = useCart();
-  const [validated, setValidated] = useState(false);
-  const [showModal, setShowModal] = useState(true);
-  const [checkoutData, setCheckoutData] = useState({
+
+  const [validated, setValidated] = useState(false); // Verifica que los datos ingresados sean validos
+  const [showModal, setShowModal] = useState(true); // Para cerrar 
+  const [checkoutData, setCheckoutData] = useState({ // Estructura del mensaje a firebase para cargar los productos
     customer: {
       name: '',
       phone: '',
@@ -24,15 +26,16 @@ const CheckoutModal = ({handleModal}) => {
     total: getCartTotalAmount(),
   });
 
-  const formik = useFormik({
-    initialValues: {
+  // Formulario
+  const formik = useFormik({ 
+    initialValues: { // Datos iniciales del formulario, se actualizan con cada input
       userName: "",
       userLastName: "",
       userPhone: "",
       userEmail: "",
       userConfirmEmail: "",
     },
-    validationSchema: checkoutValidationSchema,
+    validationSchema: checkoutValidationSchema, // Esquema de validación. Usamos YUP
     onSubmit: (values) => {
       //const orderWithDate = { ...checkoutData, date: new Date() };
       setCheckoutData({ 

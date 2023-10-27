@@ -16,7 +16,6 @@ const Products = () => {
     <>
       {loadingProductList ? (
         <Loading />
-        
       ) : (
         <Container>
           <Row className={styles.row}>
