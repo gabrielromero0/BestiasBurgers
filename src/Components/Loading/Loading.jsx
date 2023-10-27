@@ -1,6 +1,6 @@
 import { ClipLoader } from "react-spinners";
 
-const LoadingPage = () => {
+const Loading = () => {
   return (
       <div className={`d-flex align-items-center justify-content-center`} style={{ height: "100vh" }}>
         <ClipLoader color="#000000" />
@@ -8,4 +8,4 @@ const LoadingPage = () => {
   );
 };
 
-export default LoadingPage;
+export default Loading;

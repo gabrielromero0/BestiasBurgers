@@ -1,31 +1,34 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
-import ProductList from './Components/ProductList/ProductList';
 import './styles/globals.css';
-import PageNotFound from './Components/PageNotFound/PageNotFound';
-import ProductDetail from './Components/ProductDetail/ProductDetail';
-import CustomNavbar from './Components/NavbarContainer/NavbarContainer';
-import CartContextProvider from './context/CartContext';
+import Products from './pages/Products/Products';
+import NotFound from './pages/NotFound/PageNotFound';
+import ProductDetail from './pages/ProductDetail/ProductDetail';
+import Navbar from './Components/Navbar/NavbarComponent';
+import CartProvider from './context/CartContext';
 import Footer from './Components/Footer/Footer';
-import ContactoContainer from './Components/ContactoContainer/ContactoContainer';
-import CartContainer from './Components/CartContainer/CartContainer';
+import Contacto from './pages/Contacto/Contacto';
+import CartContainer from './pages/Cart/Cart';
+import { ProductProvider } from './context/ProductContext';
 
 function App() {
   return (
-    <CartContextProvider> {/* GESTIÓN DEL CARRITO*/}
-      <BrowserRouter>
-      <CustomNavbar />
-        <Routes>
-          <Route path="/" element={<ProductList />} />
-          <Route path="/product/:product_id" element={<ProductDetail />} />
-          <Route path="/category/:category" element={<ProductList />} />
-          <Route path="*" element={<PageNotFound />} />
-          <Route path="/contacto" element={ <ContactoContainer /> }/>
-          <Route path="/cart" element={ <CartContainer /> }/>
-        </Routes>
-        <Footer />
-      </BrowserRouter>
-      </CartContextProvider>
+    <CartProvider>
+      <ProductProvider>
+        <BrowserRouter>
+          <Navbar />
+          <Routes>
+            <Route path='/' element={<Products />} />
+            <Route path='/product/:productId' element={<ProductDetail />} />
+            <Route path='/category/:category' element={<Products />} />
+            <Route path='*' element={<NotFound />} />
+            <Route path='/contacto' element={<Contacto />} />
+            <Route path='/cart' element={<CartContainer />} />
+          </Routes>
+          <Footer />
+        </BrowserRouter>
+      </ProductProvider>
+    </CartProvider>
   );
 }
 

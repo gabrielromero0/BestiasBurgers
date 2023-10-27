@@ -1,9 +1,10 @@
-import React from 'react'
-import CheckoutFormComponent from './CheckoutFormComponent'
-import { useFormik } from 'formik';
+import ContactoComponent from "./ContactoComponent"
+import { useFormik } from "formik";
 import * as Yup from 'yup';
+import { sendMessage } from "../../Services/MessageService";
 
-const CheckoutForm = ({checkoutData, setCheckoutData, setValidated, handleClose}) => {
+
+const Contacto = () => {
   const formik = useFormik({
     initialValues: {
       userName: "",
@@ -11,6 +12,7 @@ const CheckoutForm = ({checkoutData, setCheckoutData, setValidated, handleClose}
       userPhone: "",
       userEmail: "",
       userConfirmEmail: "",
+      userMessage: "",
     },
     validationSchema: Yup.object({
       userName: Yup.string()
@@ -22,35 +24,21 @@ const CheckoutForm = ({checkoutData, setCheckoutData, setValidated, handleClose}
       .max(15, 'Debe tener menos de 15 caracteres')
       .required('Campo obligatorio'),
       userPhone: Yup.string()
-      .matches(/^(?!(?:11|15)\d{8})(?:\d{2})?\d{8}$/, 'Debe ingresar un número de teléfono válido en Argentina (sin 0 ni 15)')
-      .required('Campo obligatorio'),
+      .matches(/^(?!(?:11|15)\d{8})(?:\d{2})?\d{8}$/, 'Debe ingresar un número de teléfono válido en Argentina (sin 0 ni 15)'),
       userEmail: Yup.string().email('Debe ingresar un email válido').required('Campo obligatorio'),
       userConfirmEmail: Yup.string().email('Debe ingresar un email válido').required('Campo obligatorio').oneOf([Yup.ref('userEmail'), null], 'Los emails no coinciden'),
+      userMessage: Yup.string()
+        .min(3, 'Debe tener más de 3 caracteres')
+        .max(200, 'Debe tener menos de 200 caracteres')
+        .required('Campo obligatorio'),
     }),
     onSubmit: (values) => {
-      //const orderWithDate = { ...checkoutData, date: new Date() };
-      setCheckoutData({ 
-        ...checkoutData, 
-        customer: {
-          name: values.userName + " " + values.userLastName,
-          phone: values.userPhone,
-          email: values.userEmail
-        },
-        date: new Date(),
-      });
-      setValidated(true);
+      sendMessage(values);
     },
   });
-
-  const formParams = {
-    formik,
-    checkoutData,
-    setCheckoutData,
-    handleClose
-  }
   return (
-    <CheckoutFormComponent {...formParams}/>
-  )
-}
+    <ContactoComponent formik={formik} />
+  );
+};
 
-export default CheckoutForm
+export default Contacto;
