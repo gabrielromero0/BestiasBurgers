@@ -1,5 +1,5 @@
 import { createContext, useState } from "react"
-import { getProductList } from "../Services/ProductsService"
+import { getProductList } from "../Services/ProductsService.js"
 
 export const CartContext = createContext() //idealmente, el mismo nombre que el archivo
 
@@ -9,10 +9,10 @@ const CartContextProvider = ( {children} ) => { //este es el componente que prov
   const [productArray, setProductArray] = useState([]); //el estado inicial es un array vacío
   
 
-  const getProductList = () => {
+  const getProductLista = () => {
     const res = getProductList()
     setProductArray(res)
-    return res
+    return productArray(res)
   }
 
 
@@ -110,7 +110,7 @@ const CartContextProvider = ( {children} ) => { //este es el componente que prov
     getProductQuantity,
     getProductTotalPrice,
     isCartWithProducts,
-    getProductList,
+    getProductLista,
   }
 
   //value va a manejar todo lo que quiero proveer al contexto

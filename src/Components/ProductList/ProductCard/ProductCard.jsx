@@ -9,8 +9,8 @@ const ProductCard = ({ product }) => {
       <Link to={`/product/${product.id}`} className={styles.link}>
         <Card className={styles.card}>
           <Card.Img 
-            src='https://res.cloudinary.com/dna9rrdkj/image/upload/v1677524989/Rock%20n%27%20burger/products/carne/Classic-Chicken-burger_wl4pwv.jpg' 
-            className={styles.imagen}
+            src={product.img} 
+            className={styles.imgen}
           />
           <Card.Body className={styles.cardBody}>
             <Card.Title className={styles.cardTitle}>{product.name}</Card.Title>

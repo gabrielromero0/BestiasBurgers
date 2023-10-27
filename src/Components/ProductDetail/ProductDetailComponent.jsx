@@ -9,7 +9,7 @@ const ProductDetailComponent = ({productDetail = null, onAdd, initial, stock}) =
       {productDetail ? (
             <>
             <Col lg={6} className="d-flex align-items-center justify-content-end">
-              <Image src="https://res.cloudinary.com/dna9rrdkj/image/upload/v1677524989/Rock%20n%27%20burger/products/carne/Classic-Chicken-burger_wl4pwv.jpg" fluid className={styles.imagen}/>
+              <Image src={productDetail.img} fluid className={styles.imagen}/>
             </Col>
             <Col lg={6} className="d-flex align-items-start flex-column justify-content-center">
               <h1 className={styles.nombre}>{productDetail.name}</h1>

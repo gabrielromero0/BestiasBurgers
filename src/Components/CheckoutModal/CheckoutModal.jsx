@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { Modal } from 'react-bootstrap'
 import CheckoutForm from './Form/CheckoutForm';
 import { CartContext } from '../../context/CartContext';

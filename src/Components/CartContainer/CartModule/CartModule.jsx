@@ -1,5 +1,4 @@
-import React, { useContext } from 'react';
-import { CartContext } from '../../../context/CartContext';
+
 import { Col } from 'react-bootstrap';
 import CartItem from './CartItem';
 import CartSummary from './CartSummary';
