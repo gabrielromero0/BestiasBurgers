@@ -4,7 +4,7 @@ import './styles/globals.css';
 import Products from './pages/Products/Products';
 import NotFound from './pages/NotFound/PageNotFound';
 import ProductDetail from './pages/ProductDetail/ProductDetail';
-import Navbar from './Components/Navbar/NavbarComponent';
+import Navbar from './Components/Navbar/Navbar';
 import CartProvider from './context/CartContext';
 import Footer from './Components/Footer/Footer';
 import Contacto from './pages/Contacto/Contacto';

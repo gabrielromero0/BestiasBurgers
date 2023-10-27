@@ -1,12 +1,29 @@
-import React from 'react';
-import { Container, Nav, Navbar , Image} from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import CartWidget from './CartWidget';
-import NavbarDropdown from './NavbarDropdown';
-import styles from "./NavbarComponent.module.css";
+import { getCategoryList } from "../../Services/CategoryService";
+import { useEffect, useState } from "react";
+import { Container, Image, Nav, Navbar } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import NavbarDropdown from "./NavbarDropdown";
+import CartWidget from "./CartWidget";
+import styles from "./Navbar.module.css";
 import logo from '../../assets/logo.png';
 
-const NavbarComponent = (navbarProps) => {
+const CustomNavbar = () => {
+
+  const [categories, setCategories] = useState([])
+  const [areCategoriesCharged, setAreCategoriesCharged] = useState(false)
+
+  useEffect(() => {
+    getCategoryList()
+      .then((categoryList) => {
+        setCategories(categoryList)
+        setAreCategoriesCharged(true)})
+  }, [])
+
+  const navbarProps = {
+    categories,
+    areCategoriesCharged,
+  }
+
   return (
     <Navbar className={`${styles.navbar}`}  variant="pills" expand="md" style={{
       height: "80px"
@@ -35,4 +52,4 @@ const NavbarComponent = (navbarProps) => {
   );
 };
 
-export default NavbarComponent;
+export default CustomNavbar;

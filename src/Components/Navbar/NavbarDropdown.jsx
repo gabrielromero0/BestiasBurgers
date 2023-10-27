@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import styles from './NavbarComponent.module.css';
+import styles from './Navbar.module.css';
+
 const NavbarDropdown = ({ categories, areCategoriesCharged }) => {
   return (
     <NavDropdown
