@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useParams } from 'react-router';
 import LoadingPage from "../../Components/Loading/Loading";
 import { addToCart as addToCartSwal } from '../../Components/Swal/addToCart';

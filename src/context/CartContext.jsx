@@ -1,5 +1,4 @@
 import { createContext, useContext, useState } from "react"
-import { getProductList } from "../Services/ProductsService.js"
 
 export const CartContext = createContext() //idealmente, el mismo nombre que el archivo
 

@@ -1,6 +1,5 @@
 import ContactoComponent from "./ContactoComponent"
 import { useFormik } from "formik";
-import * as Yup from 'yup';
 import { sendMessage } from "../../Services/MessageService";
 import { contactoValidationSchema } from "../../utils/contactoValidationSchema";
 
