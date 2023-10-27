@@ -21,9 +21,9 @@ function App() {
             <Route path='/' element={<Products />} />
             <Route path='/product/:productId' element={<ProductDetail />} />
             <Route path='/category/:category' element={<Products />} />
-            <Route path='*' element={<NotFound />} />
             <Route path='/contacto' element={<Contacto />} />
             <Route path='/cart' element={<CartContainer />} />
+            <Route path='*' element={<NotFound />} />
           </Routes>
           <Footer />
         </BrowserRouter>
