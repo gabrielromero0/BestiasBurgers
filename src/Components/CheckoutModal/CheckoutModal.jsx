@@ -23,8 +23,12 @@ const CheckoutModal = ({showModal, handleModal}) => {
     total: getCartTotalAmount(),
   });
 
+  const handleClose = () => {
+    handleModal();
+  }
+
   return (
-    <Modal show={showModal}  onHide={()=> handleModal()} backdrop="static" keyboard={false}>
+    <Modal show={showModal} backdrop="static" keyboard={false}>
     <Modal.Header closeButton>
       <Modal.Title>Confirmar Compra</Modal.Title>
     </Modal.Header>
@@ -36,6 +40,7 @@ const CheckoutModal = ({showModal, handleModal}) => {
             checkoutData={checkoutData} 
             setCheckoutData={setCheckoutData} 
             setValidated={setValidated}
+            handleClose={handleClose}
           />
         )
       }
