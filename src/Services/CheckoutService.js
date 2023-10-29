@@ -1,43 +1,27 @@
-import { addDoc, collection, doc, getDoc } from "firebase/firestore";
+import { addDoc, collection } from "firebase/firestore";
 import { db } from "../firebaseConfig";
 
-export const getWhatsapp = async () => {
-  try {
-    const whatsappDocRef = doc(db, "settings", "whatsapp"); // "whatsapp" es el ID del documento
-    const whatsappDocSnapshot = await getDoc(whatsappDocRef);
 
-    if (whatsappDocSnapshot.exists()) {
-      // El documento existe, puedes acceder a los datos así:
-      const whatsapp = {
-        id: whatsappDocSnapshot.id,
-        ...whatsappDocSnapshot.data(),
-      };
-      return whatsapp;
-    } else {
-      console.log("El documento de WhatsApp no existe.");
-      return null;
-    }
-  } catch (error) {
-    console.error("Error al obtener el número de WhatsApp:", error);
-    throw error; // Puedes manejar el error de acuerdo a tus necesidades
-  }
-};
-
+// Función asincrónica para enviar una orden a Firebase Cloud Function
 export const sendOrder = async (order) => {
   console.log("Intentando enviar la orden a Firebase Cloud Function")
 
   try {
+    // Agregar la propiedad "date" con una fecha ISO al objeto de la orden
     const orderWithISODate = {
       ...order,
       date: order.date.toISOString(),
     };
     console.log("Orden con fecha ISO:", orderWithISODate);
+    
+    // Agregar el objeto de la orden a la colección "orders" en la base de datos
     await addDoc(collection(db, "orders"), orderWithISODate);
+
+    // Devolver true si la operación es exitosa
     return true;
   } catch (error) {
+    // Capturar y manejar errores en el envío de la orden
     console.error("Error al enviar la orden:", error);
-    throw error; // Puedes manejar el error de acuerdo a tus necesidades
   }
 };
-
 
