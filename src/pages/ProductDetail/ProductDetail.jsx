@@ -15,7 +15,8 @@ const ProductDetail = () => {
   
   useEffect(() => {
     getProductDetail(productId)
-  }, [productId, getProductDetail])
+    // eslint-disable-next-line
+  }, [productId])
 
   return (
     <>
