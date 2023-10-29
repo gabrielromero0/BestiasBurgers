@@ -6,12 +6,11 @@ import { Button } from 'react-bootstrap';
 
 
 const CartItem = ({item}) => {
-  const { 
-    deleteProduct,
-    decreaseProductQuantity,
-    increaseProductQuantity,
-  } = useCart();
+
+  // Se obtiene las funciones para eliminar el producto, aumentar y disminuir la cantidad del producto
+  const { deleteProduct, decreaseProductQuantity, increaseProductQuantity, } = useCart();
   
+  // Funciones para aumentar, eliminar y disminuir la cantidad del producto
   const handleMinus = (id) => {
     return decreaseProductQuantity(id)
   }

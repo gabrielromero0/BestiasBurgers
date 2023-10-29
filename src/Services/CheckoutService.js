@@ -3,7 +3,7 @@ import { db } from "../firebaseConfig";
 
 
 // Función asincrónica para enviar una orden a Firebase Cloud Function
-export const sendOrder = async (order) => {
+export const sendOrderRequest = async (order) => {
   console.log("Intentando enviar la orden a Firebase Cloud Function")
 
   try {

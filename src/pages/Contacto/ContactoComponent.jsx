@@ -2,15 +2,18 @@ import React from "react";
 import { Button, Col, Container, FloatingLabel, Form, Row } from "react-bootstrap";
 import styles from "./Contacto.module.css";
 
+// Componente ContactoComponent que recibe formik como propiedad.
 const ContactoComponent = ({ formik }) => {
   return (
     <Container fluid className={styles.container}>
       <Row className="d-flex justify-content-center">
         <Col lg={5} md={6}>
+          {/* Formulario de contacto */}
           <Form variant="dark" onSubmit={formik.handleSubmit}>
             <Row>
               <Col sm={6}>
-              <FloatingLabel controlId="floatingInput" label="Nombre" className="mb-3" >
+                {/* Campo de Nombre */}
+                <FloatingLabel controlId="floatingInput" label="Nombre" className="mb-3">
                   <Form.Control 
                     type="text" 
                     placeholder="Nombre" 
@@ -26,9 +29,10 @@ const ContactoComponent = ({ formik }) => {
                 </FloatingLabel>
               </Col>
               <Col sm={6}>
-                <FloatingLabel controlId="floatingInput" label="Apellido" className="mb-3" >
+                {/* Campo de Apellido */}
+                <FloatingLabel controlId="floatingInput" label="Apellido" className="mb-3">
                   <Form.Control 
-                    type="text"
+                    type="text" 
                     placeholder="Apellido" 
                     name="userLastName" 
                     onChange={formik.handleChange}
@@ -42,7 +46,8 @@ const ContactoComponent = ({ formik }) => {
                 </FloatingLabel>
               </Col>
             </Row>
-            <FloatingLabel controlId="floatingInput" label="Teléfono" className="mb-3" >
+            {/* Campo de Teléfono */}
+            <FloatingLabel controlId="floatingInput" label="Teléfono" className="mb-3">
               <Form.Control 
                 type="text" 
                 placeholder="Teléfono" 
@@ -56,7 +61,8 @@ const ContactoComponent = ({ formik }) => {
                 {formik.errors.userPhone}
               </Form.Control.Feedback>
             </FloatingLabel>
-            <FloatingLabel controlId="floatingInput" label="Email" className="mb-3" >
+            {/* Campo de Email */}
+            <FloatingLabel controlId="floatingInput" label="Email" className="mb-3">
               <Form.Control 
                 type="text" 
                 placeholder="Email" 
@@ -70,7 +76,8 @@ const ContactoComponent = ({ formik }) => {
                 {formik.errors.userEmail}
               </Form.Control.Feedback>
             </FloatingLabel>
-            <FloatingLabel controlId="floatingInput" label="Confirmar Email" className="mb-3" >
+            {/* Campo de Confirmación de Email */}
+            <FloatingLabel controlId="floatingInput" label="Confirmar Email" className="mb-3">
               <Form.Control 
                 type="text" 
                 placeholder="Confirmar Email"
@@ -84,7 +91,8 @@ const ContactoComponent = ({ formik }) => {
                 {formik.errors.userConfirmEmail}
               </Form.Control.Feedback>
             </FloatingLabel>
-            <FloatingLabel controlId="floatingInput" label="Mensaje" className="mb-3" >
+            {/* Campo de Mensaje (área de texto) */}
+            <FloatingLabel controlId="floatingInput" label="Mensaje" className="mb-3">
               <Form.Control 
                 as="textarea" 
                 placeholder="Mensaje"
@@ -93,13 +101,14 @@ const ContactoComponent = ({ formik }) => {
                 onBlur={formik.handleBlur}
                 value={formik.values.userMessage}
                 isInvalid={formik.touched.userMessage && formik.errors.userMessage}
-                style={{height: '100px'}}
+                style={{ height: '100px' }}
               />
               <Form.Control.Feedback type="invalid">
                 {formik.errors.userMessage}
               </Form.Control.Feedback>
             </FloatingLabel>
-            <Button  type="submit">
+            {/* Botón de Enviar */}
+            <Button type="submit">
               Enviar
             </Button>
           </Form>

@@ -3,6 +3,10 @@ import styles from './ItemCount.module.css'
 import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai';
 import { Button } from 'react-bootstrap';
 
+/**
+ * Este componente se usa en ItemDetail.jsx para mostrar la cantidad de productos que se van a agregar al carrito.
+ * recibe como props el stock del producto, la cantidad inicial y la función onAdd que se ejecuta cuando se agrega el producto al carrito.
+ */
 const ItemCount = ({stock, initial, onAdd}) => {
 
   const [quantity, setQuantity] = useState(initial)
