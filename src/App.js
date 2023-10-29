@@ -11,19 +11,26 @@ import Contacto from './pages/Contacto/Contacto';
 import CartContainer from './pages/Cart/Cart';
 import { ProductProvider } from './context/ProductContext';
 
+/**
+ * 
+ * Este es el componente principal de la aplicación.
+ * Aquí se importan los componentes que hacen a las rutas de la aplicación (que luego se van a ver reflejados en las URL)
+ * Ademas, se importan los contextos que van a ser utilizados en la aplicación.
+ */
+
 function App() {
   return (
-    <CartProvider>
+    <CartProvider> 
       <ProductProvider>
         <BrowserRouter>
           <Navbar />
           <Routes>
             <Route path='/' element={<Products />} />
-            <Route path='/product/:productId' element={<ProductDetail />} />
-            <Route path='/category/:category' element={<Products />} />
+            <Route path='/product/:productId' element={<ProductDetail />} /> {/* :productId es un parametro que se pasa por URL */}
+            <Route path='/category/:category' element={<Products />} /> {/* :category es un parametro que se pasa por URL */}
             <Route path='/contacto' element={<Contacto />} />
             <Route path='/cart' element={<CartContainer />} />
-            <Route path='*' element={<NotFound />} />
+            <Route path='*' element={<NotFound />} /> {/* * es un comodin que se utiliza para cuando no se encuentra la ruta */}
           </Routes>
           <Footer />
         </BrowserRouter>
