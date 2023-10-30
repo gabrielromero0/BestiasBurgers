@@ -1,32 +1,51 @@
-.link{
- text-decoration:none;
+.link {
+  text-decoration: none;
 }
 
-.card{
+.card {
   max-width: 250px;
   height: 380px !important;
-  
   margin: 10px 0 10px 0;
-  
+  display: flex;
+  flex-direction: column; /* Cambia la dirección de flex a columna para que la imagen y el contenido estén apilados */
+  align-items: center; /* Centra los elementos horizontalmente */
 }
 
-.card:hover{
-  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
-  transform: scale(1.02);
-  transition: all 0.5s ease;
+.card img {
+  width: 80%; /* La imagen ocupa todo el ancho de la tarjeta */
+  height: 55%; /* La altura se ajusta automáticamente para mantener la proporción */
 }
 
-.cardBody{
+.card:hover {
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2); /* Cambiamos la sombra en hover */
+  transform: scale(1.05); /* Hacemos que la tarjeta sea ligeramente más grande en hover */
+  background-color: #f8f8f8; /* Cambiamos el color de fondo en hover */
+}
+
+.card:hover img {
+  transform: scale(1.1); /* Hacemos que la imagen sea un poco más grande en hover */
+}
+
+.cardBody {
+  background-color: rgb(209, 209, 209);
+  height: 45%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  text-decoration:none!important;
-}
-.cardTitle{
-  font-size: 16px!important;
-  font-weight: bold!important;
+  padding: 12px; /* Agregamos un espacio interno para separar el contenido del borde */
+  text-decoration: none !important;
+  color: rgb(72, 72, 72); /* Cambiamos el color del texto a blanco */
 }
 
-.cardText{
-  font-size: 13px!important;
+.cardTitle {
+  font-size: 16px !important;
+  font-weight: bold !important;
+  margin-bottom: 6px; /* Agregamos margen inferior para separar el título del texto */
 }
+
+.cardText {
+  font-size: 13px !important;
+  line-height: 1.4; /* Aumentamos la altura de línea para una mejor legibilidad */
+}
+
