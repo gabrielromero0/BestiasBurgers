@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import styles from './ProductCard.module.css';
 const ProductCard = ({ product }) => {
   return (
-    <Col className={`d-flex align-center ${styles.col}`} lg={3} xs={4}>
+    <Col xs={12} sm={6} md={4} lg={3} className={`d-flex align-center ${styles.col}`}>
       <Link to={`/product/${product.id}`} className={styles.link}>
         <Card className={styles.card}>
           <Card.Img 
