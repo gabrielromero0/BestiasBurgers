@@ -1,8 +1,15 @@
-import { createContext, useState } from "react"
+import { createContext, useContext, useState } from "react"
 
 export const CartContext = createContext() //idealmente, el mismo nombre que el archivo
 
-const CartContextProvider = ( {children} ) => { //este es el componente que provee el contexto
+export const useCart = () => {
+  const context = useContext(CartContext);
+  if (!context) {
+    console.log("useProduct debe estar dentro del proveedor ProductProvider")
+  }
+  return context;
+}
+const CartProvider = ( {children} ) => { //este es el componente que provee el contexto
 
   const [cartList, setCartList] = useState([]); //el estado inicial es un array vacío
   
@@ -96,7 +103,7 @@ const CartContextProvider = ( {children} ) => { //este es el componente que prov
     getCartTotalQuantity,
     getProductQuantity,
     getProductTotalPrice,
-    isCartWithProducts
+    isCartWithProducts,
   }
 
   //value va a manejar todo lo que quiero proveer al contexto
@@ -107,4 +114,4 @@ const CartContextProvider = ( {children} ) => { //este es el componente que prov
   )
 }
 
-export default CartContextProvider
+export default CartProvider

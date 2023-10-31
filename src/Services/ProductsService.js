@@ -10,7 +10,7 @@ const filterQuery = (category) => {
   }
 }
 
-export const getProductList = async (category = null) => {
+export const getProductListRequest = async (category = null) => {
   let productList = [];
   try{
     const productsCollection = filterQuery(category);
@@ -26,7 +26,7 @@ export const getProductList = async (category = null) => {
   }
 }
 
-export const getProductDetail = async (id) => {
+export const getProductDetailRequest = async (id) => {
   try {
     const itemCollection = collection(db, "products");
     const queryById = doc(itemCollection, id);
@@ -37,6 +37,7 @@ export const getProductDetail = async (id) => {
       const productDetail = { ...receivedProduct.data(), id: receivedProduct.id };
       return productDetail;
     } else {
+      console.log("No existe el producto en firebase  ")
       return null; // Return null if the product doesn't exist
     }
   } catch (error) {
