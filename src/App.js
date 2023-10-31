@@ -12,12 +12,10 @@ import CartContainer from './pages/Cart/Cart';
 import { ProductProvider } from './context/ProductContext';
 
 /**
- * 
  * Este es el componente principal de la aplicación.
  * Aquí se importan los componentes que hacen a las rutas de la aplicación (que luego se van a ver reflejados en las URL)
  * Ademas, se importan los contextos que van a ser utilizados en la aplicación.
  */
-
 function App() {
   return (
     <CartProvider> 
