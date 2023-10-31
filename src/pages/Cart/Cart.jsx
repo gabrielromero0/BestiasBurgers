@@ -22,55 +22,73 @@ export default function Cart() {
   );
 };
 
+// Componente para mostrar un mensaje cuando el carrito está vacío
 const NoProducts = () => {
   return (
-  <Col className={`d-flex justify-content-center`}>
-    <h2 className={styles.title}>No hay productos en el carrito</h2>
-  </Col>
-)}
-
-const CartModule = () => {
-  const {cartList} = useCart();
-  return (
-  <>
-    <Col lg={6}>
-      <h2>Carrito</h2>
-
-      {cartList.map((item) => {
-          return (<CartItem item={item} key={item.id}/>)
-        })
-        }
-
+    <Col className={`d-flex justify-content-center`}>
+      <h2 className={styles.title}>No hay productos en el carrito</h2>
     </Col>
-    <Col lg={4} >
-      <CartSummary/>
-    </Col>
-  </>
   )
 }
 
+// Componente para mostrar el contenido del carrito
+const CartModule = () => {
+
+  // Se obtiene la lista de productos del carrito desde el contexto
+  const { cartList } = useCart();
+
+  return (
+    <>
+      <Col lg={6}>
+        <h2>Carrito</h2>
+        {/* Se recorre la lista del carrito, y se pasan los datos del producto en particular al componente CartItem */}
+        {/* Esto es la parte de la izquierda de la página */}
+        {cartList.map((item) => {
+          return (<CartItem item={item} key={item.id}/>);
+        })}
+      </Col>
+      <Col lg={4}>
+        {/* Componente lateral derecho, que muestra el resumen total del carrito y las opciones de finaliza compra*/}
+        <CartSummary />
+      </Col>
+    </>
+  )
+}
+
+// Componente para mostrar el resumen del carrito y acciones
 const CartSummary = () => {
-  const { getCartTotalAmount, getCartTotalQuantity, cleanCart} = useCart();
+
+  // Se obtienen las funciones del contexto
+  const { getCartTotalAmount, getCartTotalQuantity, cleanCart } = useCart();
+
+  // Estado para manejar la apertura del modal desde el componente "CartSummary", y pasarlo al componente "CheckoutModal"
+  // Esto es necesario porque el componente "CheckoutModal" está fuera del componente "Cart", y si bien el modal maneja su propia lógica de apertura y cierre,
+  // es necesario que el componente "Cart" sepa si el modal está abierto o cerrado para poder mostrarlo o no.
   const [openModal, setOpenModal] = useState(false);
 
+  // Función para manejar la apertura del modal
   const handleModal = () => {
     setOpenModal(!openModal);
   };
 
+  // Función para manejar el borrado del carrito
   const handleCleanCart = () => {
+
+    // Se muestra un mensaje de confirmación
     Swal.fire({
-      title: 'Estas seguro que deseas limpiar el carrito?',
+      title: '¿Estás seguro que deseas limpiar el carrito?',
       icon: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
       confirmButtonText: 'Borrar',
       cancelButtonText: 'Cancelar',
+
+      // Si se confirma la acción, se muestra un mensaje de éxito y se limpia el carrito
     }).then((result) => {
       if (result.isConfirmed) {
         Swal.fire('Eliminado', 'Se limpió correctamente todo el carrito');
         return cleanCart();
-       
       }
     })
   }
@@ -91,11 +109,8 @@ const CartSummary = () => {
           Borrar carrito
         </Button>
       </div>
+      {/* Se muestra el modal si el estado de openModal es true */}
       {openModal && <CheckoutModal handleModal={handleModal}/>}
     </div>
   );
 }
-
-
-
-

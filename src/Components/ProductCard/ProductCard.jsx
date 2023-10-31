@@ -4,6 +4,12 @@ import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
 import styles from './ProductCard.module.css';
 
+
+/**
+ * Este componente se usa en ItemList.jsx para mostrar cada producto de la lista.
+ * Recibe como props un objeto producto.
+ */
+
 const ProductCard = ({ product }) => {
   console.log(product.img);
   return (
