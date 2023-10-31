@@ -29,13 +29,10 @@ const CustomNavbar = () => {
   }
 
   return (
-    <Navbar className={`${styles.navbar}`}  variant="pills" expand="md" style={{
-      height: "80px"
-    }}>
-      <Container >
+    <Navbar className={`${styles.navbar}`} variant="pills" expand="md" style={{ height: "80px" }}>
+      <Container>
         <Link to='/' className={`${styles.links}`}>
-          <Navbar.Brand><Image src={logo} alt="Mi Imagen" fluid/>
-          </Navbar.Brand>
+          <Navbar.Brand><Image src={logo} alt="Mi Imagen" fluid/></Navbar.Brand>
         </Link>
         <Navbar.Toggle aria-controls='basic-navbar-nav' />
         <Navbar.Collapse id='basic-navbar-nav'>
@@ -45,15 +42,17 @@ const CustomNavbar = () => {
               {/* Se muestra el componente NavbarDropdown que muestra las categorías de productos */}
               <NavbarDropdown {...navbarProps} />
 
-              {/* Se muestra el componente Link que muestra el link a la página de contacto */}
-              <Link to="/contacto"  className={styles.links}>
-                  Contactanos
+            </div>
+            {/* Se muestra el componente Link que muestra el link a la página de contacto */}
+            <div className={`d-flex align-items-center ${styles.buttons}`} >
+              <Link to="/contacto" className={`contact-link ${styles.links}`}>
+                Contactanos
               </Link>
             </div>
 
             {/* Se muestra el componente CartWidget que muestra el ícono del carrito y la cantidad de productos que hay en el carrito */}
             <Link to="/cart">
-                <CartWidget />
+              <CartWidget />
             </Link>
           </Nav>
         </Navbar.Collapse>
@@ -61,5 +60,7 @@ const CustomNavbar = () => {
     </Navbar>
   );
 };
+
+
 
 export default CustomNavbar;

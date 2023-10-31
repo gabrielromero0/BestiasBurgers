@@ -28,6 +28,11 @@ function Footer() {
             <FaFacebook size={40} />
           </Col>
         </Row>
+        <Row className="justify-content-center mt-4" style={{ marginRight: 0 }}>
+        <Col className="text-center">
+          <p>&copy; 2023 Bestias Binarias. Todos los derechos reservados.</p>
+        </Col>
+      </Row>
       </Container>
     </footer>
   );

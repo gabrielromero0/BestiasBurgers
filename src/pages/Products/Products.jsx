@@ -4,6 +4,8 @@ import { Container, Row } from 'react-bootstrap';
 import styles from './Products.module.css';
 import ProductCard from '../../Components/ProductCard/ProductCard';
 import { useProduct } from '../../context/ProductContext';
+import { useParams } from 'react-router-dom';
+import BrandComponent from '../../Components/BrandContainer/BrandComponent';
 
 /**
  * Este componente muestra la lista de productos, ya sea en general o filtrados por categoría.
@@ -14,14 +16,12 @@ import { useProduct } from '../../context/ProductContext';
 const Products = () => {
   const {loadingProductList, getProductList, productList} = useProduct(); // Se utilizaran las funciones y estados de ProductContext
 
-  // Se llama a getProductList() al iniciar el componente, useEffect se ejecuta una sola vez apenas inicia la página
-  useEffect(() => { 
+  const { category } = useParams();
 
-    // Se llama a la función getProductList del contexto, que a su vez hace una request a la API de Firebase
-    getProductList(); 
-    // eslint-disable-next-line
-  }, [])
-
+  useEffect(() => {
+    category ? getProductList(category) : getProductList();
+    // eslint-disable-next-line 
+  }, [category])
 
   /**
    * Si loadingProductList es true, se muestra el componente Loading, de lo contrario se muestra la lista de productos.
@@ -30,7 +30,8 @@ const Products = () => {
    */
   return (
     <>
-      {loadingProductList ? ( 
+    <BrandComponent/>
+      {loadingProductList ? (
         <Loading />
       ) : (
         <Container>
