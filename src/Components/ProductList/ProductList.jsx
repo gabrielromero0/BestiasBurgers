@@ -4,6 +4,7 @@ import { getProductList } from "../../Services/ProductsService";
 import LoadingPage from "../LoadingPage/LoadingPage";
 import ProductListComponent from './ProductListComponent';
 import { useParams } from 'react-router-dom';
+import BrandComponent from '../BrandContainer/BrandComponent';
 
 const ProductList = () => {
   const [productList, setProductList] = useState();
@@ -20,13 +21,14 @@ const ProductList = () => {
 
   return (
     <>
-    {
+    <BrandComponent/>
+    {      
       (areItemsCharged) 
       ? <div className="products">
          <ProductListComponent productList={productList} />
         </div>
       : <LoadingPage />
-    }
+    }    
     </>
   )
 }
