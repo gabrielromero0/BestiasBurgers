@@ -5,6 +5,7 @@ import styles from './Products.module.css';
 import ProductCard from '../../Components/ProductCard/ProductCard';
 import { useProduct } from '../../context/ProductContext';
 import { useParams } from 'react-router-dom';
+import BrandComponent from '../../Components/BrandContainer/BrandComponent';
 
 const Products = () => {
   const {loadingProductList, getProductList, productList} = useProduct();
@@ -18,6 +19,7 @@ const Products = () => {
 
   return (
     <>
+    <BrandComponent/>
       {loadingProductList ? (
         <Loading />
       ) : (
