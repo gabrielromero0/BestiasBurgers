@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { useParams } from 'react-router';
 import LoadingPage from "../../Components/Loading/Loading";
-import { addToCart as addToCartSwal } from '../../Components/Swal/addToCart';
 import { useCart } from '../../context/CartContext';
 import { Col, Image, Row } from 'react-bootstrap';
 import styles from "./ProductDetail.module.css"
