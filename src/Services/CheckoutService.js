@@ -7,15 +7,9 @@ export const sendOrderRequest = async (order) => {
   console.log("Intentando enviar la orden a Firebase Cloud Function")
 
   try {
-    // Agregar la propiedad "date" con una fecha ISO al objeto de la orden
-    const orderWithDate = {
-      ...order,
-      date: order.date.toString(),
-    };
-    console.log("Orden con fecha ISO:", orderWithDate);
-    
+ 
     // Agregar el objeto de la orden a la colección "orders" en la base de datos
-    await addDoc(collection(db, "orders"), orderWithDate);
+    await addDoc(collection(db, "orders"), order);
 
     // Devolver true si la operación es exitosa
     return true;
@@ -24,4 +18,3 @@ export const sendOrderRequest = async (order) => {
     console.error("Error al enviar la orden:", error);
   }
 };
-
