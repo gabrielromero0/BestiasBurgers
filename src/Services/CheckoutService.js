@@ -7,9 +7,12 @@ export const sendOrderRequest = async (order) => {
   console.log("Intentando enviar la orden a Firebase Cloud Function")
 
   try {
- 
+    const orderWithDate = {
+      ...order,
+      date: order.date.toLocaleString(),
+    };    
     // Agregar el objeto de la orden a la colección "orders" en la base de datos
-    await addDoc(collection(db, "orders"), order);
+    await addDoc(collection(db, "orders"), orderWithDate);
 
     // Devolver true si la operación es exitosa
     return true;
